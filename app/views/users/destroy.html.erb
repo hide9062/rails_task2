@@ -1,2 +1,11 @@
+<%= link_to "投稿画面へ", new_user_path %>
+<% @users.each do |user| %>
+  <p>
+    <%= user.name %>
+    <%= user.age %>
+    <!-- 以下のコードを追加 -->
+    <%= link_to "削除", user_path(user), method: :delete, data: {confirm: "削除しますか?"} %>
+  </p>
+<% end %>
 <h1>削除完了</h1>
-<%= link_to "一覧画面へ", "/users" %>
+<%= link_to "一覧画面へ", users_path %>
